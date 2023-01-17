@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        " #S",
+        "K#S"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stick"
+        },
+        "S": {
+            "item": "ftgu:grass_rope"
+        },
+        "K": {
+            "tag": "ftgu:tooltypes/knives_0"
+        }
+    },
+    "result": {
+        "item": "ftgu:primitive_bow"
+    }
+}

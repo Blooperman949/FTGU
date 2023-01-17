@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#F",
+        " B"
+    ],
+    "key": {
+        "#": {
+            "tag": "ftgu:tooltypes/knives_0"
+        },
+        "F": {
+            "item": "minecraft:flint"
+        },
+        "B": {
+            "item": "ftgu:dark_oak_branch"
+        }
+    },
+    "result": {
+        "item": "ftgu:dark_oak_flint_hatchet"
+    }
+}

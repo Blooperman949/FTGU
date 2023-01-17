@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#R#",
+        "R R",
+        "#R#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:stick"
+        },
+        "R": {
+            "item": "ftgu:grass_rope"
+        }
+    },
+    "result": {
+        "item": "ftgu:primitive_frame"
+    }
+}

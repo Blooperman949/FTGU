@@ -1,0 +1,6 @@
+{
+    "parent": "ftgu:block/brick_port",
+    "textures": {
+        "all": "ftgu:block/adobe_bricks"
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "H",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "tag": "ftgu:branch"
+        },
+        "H": {
+            "tag": "ftgu:tooltypes/axes_0"
+        }
+    },
+    "result": {
+        "item": "minecraft:stick",
+        "count": 4
+    }
+}

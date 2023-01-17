@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "ftgu:item/spruce_digging_stick"
+    }
+}

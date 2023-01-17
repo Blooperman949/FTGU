@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#F",
+        " B"
+    ],
+    "key": {
+        "#": {
+            "tag": "ftgu:tooltypes/axes_0"
+        },
+        "F": {
+            "item": "minecraft:flint"
+        },
+        "B": {
+            "item": "ftgu:oak_branch"
+        }
+    },
+    "result": {
+        "item": "ftgu:oak_flint_chisel"
+    }
+}

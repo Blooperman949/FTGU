@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "ftgu:block/jungle_branches",
+      "y": 90
+    },
+    "axis=y": {
+      "model": "ftgu:block/jungle_branches",
+      "x": 90
+    },
+    "axis=z": {
+      "model": "ftgu:block/jungle_branches"
+    }
+  }
+}

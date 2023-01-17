@@ -1,0 +1,33 @@
+{
+    "multipart": [
+        {
+            "apply": {
+                "model": "ftgu:block/primitive_frame"
+            }
+        },
+        {
+            "apply": {
+                "model": "ftgu:block/assembly/adobe_bricks_1"
+            },
+            "when": {
+                "step": 1
+            }
+        },
+        {
+            "apply": {
+                "model": "ftgu:block/adobe_brick_slab"
+            },
+            "when": {
+                "step": 2
+            }
+        },
+        {
+            "apply": {
+                "model": "ftgu:block/assembly/adobe_bricks_3"
+            },
+            "when": {
+                "step": 3
+            }
+        }
+    ]
+}

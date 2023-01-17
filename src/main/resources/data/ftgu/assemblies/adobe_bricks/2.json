@@ -1,0 +1,5 @@
+{
+    "base": "ftgu:assembling_adobe_bricks[step=2]",
+    "addition": "ftgu:adobe_brick",
+    "result": "ftgu:assembling_adobe_bricks[step=3]"
+}

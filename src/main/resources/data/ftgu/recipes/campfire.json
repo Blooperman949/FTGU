@@ -1,0 +1,25 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#F#",
+        "SHS",
+        "#S#"
+    ],
+    "key": {
+        "#": {
+            "tag": "ftgu:branch"
+        },
+        "F": {
+            "tag": "ftgu:tooltypes/knives_0"
+        },
+        "H": {
+            "tag": "ftgu:tooltypes/axes_0"
+        },
+        "S": {
+            "item": "ftgu:twig"
+        }
+    },
+    "result": {
+        "item": "ftgu:unlit_campfire"
+    }
+}

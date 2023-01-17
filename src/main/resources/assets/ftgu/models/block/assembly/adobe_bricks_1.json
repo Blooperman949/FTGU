@@ -1,0 +1,6 @@
+{
+    "parent": "ftgu:block/half_slab",
+    "textures": {
+        "all": "ftgu:block/adobe_bricks"
+    }
+}

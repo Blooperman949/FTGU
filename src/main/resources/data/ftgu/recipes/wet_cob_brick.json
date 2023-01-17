@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "ftgu:cob"
+        }
+    ],
+    "result": {
+        "item": "ftgu:wet_cob_brick"
+    }
+}

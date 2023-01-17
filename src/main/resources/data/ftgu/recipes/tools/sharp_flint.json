@@ -1,0 +1,15 @@
+{
+    "type": "ftgu:crafting_shapeless",
+    "surface": "#ftgu:surfaces/stone",
+    "ingredients": [
+        {
+            "item": "minecraft:flint"
+        },
+        {
+            "item": "minecraft:flint"
+        }
+    ],
+    "result": {
+        "item": "ftgu:sharp_flint"
+    }
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "ftgu:block/drying_brick",
+	"textures": {
+		"all": "ftgu:block/cob"
+	}
+}

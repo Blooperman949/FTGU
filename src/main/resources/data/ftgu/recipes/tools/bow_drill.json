@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:stick"
+        },
+        {
+            "item": "ftgu:primitive_bow"
+        }
+    ],
+    "result": {
+        "item": "ftgu:bow_drill"
+    }
+}

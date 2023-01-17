@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"M#",
+		"#M"
+	],
+	"key": {
+		"#": {
+			"item": "ftgu:grass"
+		},
+		"M": {
+			"item": "ftgu:mud_ball"
+		}
+	},
+	"result": {
+		"item": "ftgu:cob",
+		"count": 2
+	}
+}

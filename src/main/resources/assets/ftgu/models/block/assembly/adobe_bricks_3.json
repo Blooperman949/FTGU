@@ -1,0 +1,6 @@
+{
+    "parent": "ftgu:block/threequarter_slab",
+    "textures": {
+        "all": "ftgu:block/adobe_bricks"
+    }
+}

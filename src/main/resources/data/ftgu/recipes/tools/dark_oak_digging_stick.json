@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "B",
+        "F"
+    ],
+    "key": {
+        "B": {
+            "item": "ftgu:dark_oak_branch"
+        },
+        "F": {
+            "tag": "ftgu:tooltypes/knives_0"
+        }
+    },
+    "result": {
+        "item": "ftgu:dark_oak_digging_stick"
+    }
+}

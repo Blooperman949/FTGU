@@ -1,0 +1,6 @@
+{
+    "parent": "ftgu:item/primitive_bow",
+    "textures": {
+        "layer0": "ftgu:item/primitive_bow_pulling_1"
+    }
+}

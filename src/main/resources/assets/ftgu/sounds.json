@@ -1,0 +1,9 @@
+{
+    "chisel": {
+        "category": "blocks",
+        "subtitle": "ftgu.chisel",
+        "sounds": [
+            "ftgu:chisel"
+        ]
+    }
+}

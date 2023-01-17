@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "B",
+        "F"
+    ],
+    "key": {
+        "B": {
+            "item": "ftgu:birch_branch"
+        },
+        "F": {
+            "tag": "ftgu:tooltypes/knives_0"
+        }
+    },
+    "result": {
+        "item": "ftgu:birch_digging_stick"
+    }
+}

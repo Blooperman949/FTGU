@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "B",
+        "F"
+    ],
+    "key": {
+        "B": {
+            "item": "ftgu:acacia_branch"
+        },
+        "F": {
+            "tag": "ftgu:tooltypes/knives_0"
+        }
+    },
+    "result": {
+        "item": "ftgu:acacia_digging_stick"
+    }
+}
