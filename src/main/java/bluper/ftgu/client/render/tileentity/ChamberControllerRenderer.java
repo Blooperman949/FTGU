@@ -45,9 +45,8 @@ public class ChamberControllerRenderer extends TileEntityRenderer<ChamberControl
 			IVertexBuilder vb = buf.getBuffer(FTGURenderTypes.FLUID);
 			int area = te.getChamber().area();
 			int lightAbove = WorldRenderer.getLightColor(te.getLevel(), cp.above());
-			int shape = 0b111110;
 			te.getTank().forEachFluid((fs, lvl, i) -> {
-				FluidRenderer.renderBox(ms, vb, fs, 0, (lvl / 1000f) / area + 1, 0, dx, (fs.getAmount() / 1000f) / area, dz, lightAbove, i == 0 ? shape + 1 : shape);
+				FluidRenderer.renderBox(ms, vb, fs.getFluid(), 0, (lvl / 1000f) / area + 1, 0, dx, (fs.getAmount() / 1000f) / area, dz, lightAbove, true, true, i == 0);
 			});
 		}
 	}

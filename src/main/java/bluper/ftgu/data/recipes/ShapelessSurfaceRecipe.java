@@ -28,6 +28,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.RecipeMatcher;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
+/**
+ * A shapeless recipe that requires a surface {@code Block} for crafting.
+ * @author Bluperman949
+ */
 public class ShapelessSurfaceRecipe implements IFTGUCraftingRecipe {
 	private final ResourceLocation id;
 	private final String group;
@@ -37,7 +41,7 @@ public class ShapelessSurfaceRecipe implements IFTGUCraftingRecipe {
 	private final Predicate<Block> surfaceTest;
 	private final String surfaceTestLocation;
 
-	public ShapelessSurfaceRecipe(ResourceLocation id, String group, ItemStack result, NonNullList<Ingredient> ingredients, Predicate<Block> surfaceTest, String surfaceTestLocation) {
+	ShapelessSurfaceRecipe(ResourceLocation id, String group, ItemStack result, NonNullList<Ingredient> ingredients, Predicate<Block> surfaceTest, String surfaceTestLocation) {
 		this.id = id;
 		this.group = group;
 		this.result = result;

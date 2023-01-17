@@ -1,4 +1,4 @@
-package bluper.ftgu.data.assembly;
+package bluper.ftgu.data.assemblies;
 
 import javax.annotation.Nullable;
 
@@ -7,6 +7,10 @@ import net.minecraft.item.Item;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 
+/**
+ * Implementation of {@link IAssembly}.
+ * @author Bluperman949
+ */
 public class Assembly implements IAssembly {
 	BlockState base;
 	Item addition;
@@ -14,7 +18,7 @@ public class Assembly implements IAssembly {
 	Item pop;
 	SoundEvent sound;
 
-	public Assembly(BlockState base, Item addition, BlockState result, @Nullable Item pop, SoundEvent sound) {
+	Assembly(BlockState base, Item addition, BlockState result, @Nullable Item pop, SoundEvent sound) {
 		this.base = base;
 		this.addition = addition;
 		this.result = result;

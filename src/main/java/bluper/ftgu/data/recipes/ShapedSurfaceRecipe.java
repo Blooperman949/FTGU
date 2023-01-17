@@ -30,6 +30,10 @@ import net.minecraftforge.common.crafting.IShapedRecipe;
 import net.minecraftforge.common.util.Size2i;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 
+/**
+ * A shaped recipe that requires a surface {@code Block} for crafting.
+ * @author Bluperman949
+ */
 public class ShapedSurfaceRecipe implements IFTGUCraftingRecipe, IShapedRecipe<FTGUCraftingInventory> {
 	static final int MAX_WIDTH = 3;
 	static final int MAX_HEIGHT = 3;
@@ -42,7 +46,7 @@ public class ShapedSurfaceRecipe implements IFTGUCraftingRecipe, IShapedRecipe<F
 	private final Predicate<Block> surfaceTest;
 	private final String surfaceTestLocation;
 
-	public ShapedSurfaceRecipe(ResourceLocation id, String group, int width, int height, NonNullList<Ingredient> ingredients, ItemStack result, Predicate<Block> surfaceTest, String surfaceTestLocation) {
+	ShapedSurfaceRecipe(ResourceLocation id, String group, int width, int height, NonNullList<Ingredient> ingredients, ItemStack result, Predicate<Block> surfaceTest, String surfaceTestLocation) {
 		this.id = id;
 		this.group = group;
 		this.width = width;

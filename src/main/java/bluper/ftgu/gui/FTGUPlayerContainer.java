@@ -20,6 +20,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
+/**
+ * FTGU's replacement for {@link PlayerContainer}. The 2x2 crafting grid has been removed.<br>
+ * More features will come in upcoming versions.
+ * @author Bluperman949
+ */
 public class FTGUPlayerContainer extends Container {
 	public static final ResourceLocation EMPTY_SLOT_HAND_LEFT = new ResourceLocation(FTGU.MODID, "item/empty_slot_hand_left");
 	public static final ResourceLocation EMPTY_SLOT_HAND_RIGHT = new ResourceLocation(FTGU.MODID, "item/empty_slot_hand_right");

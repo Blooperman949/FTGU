@@ -8,6 +8,7 @@ import bluper.ftgu.registry.registries.FTGURecipeTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.IRecipeHolder;
+import net.minecraft.inventory.container.CraftingResultSlot;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.ICraftingRecipe;
@@ -18,6 +19,13 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.fml.hooks.BasicEventHooks;
 
+/**
+ * A {@code Slot} similar to {@link CraftingResultSlot} that damages tool items
+ * instead of consuming them.<br>
+ * @see DataUtils#getRemainingItems(FTGUCraftingInventory)
+ * @see FTGUCraftingContainer
+ * @author Bluperman949
+ */
 public class FTGUCraftingResultSlot extends Slot {
 	private final FTGUCraftingInventory craftSlots;
 	private final PlayerEntity player;
@@ -34,8 +42,7 @@ public class FTGUCraftingResultSlot extends Slot {
 	}
 
 	public ItemStack remove(int count) {
-		if (this.hasItem())
-			this.removeCount += Math.min(count, this.getItem().getCount());
+		if (this.hasItem()) this.removeCount += Math.min(count, this.getItem().getCount());
 		return super.remove(count);
 	}
 
@@ -53,8 +60,7 @@ public class FTGUCraftingResultSlot extends Slot {
 			item.onCraftedBy(this.player.level, this.player, this.removeCount);
 			BasicEventHooks.firePlayerCraftingEvent(this.player, item, this.craftSlots);
 		}
-		if (this.container instanceof IRecipeHolder)
-			((IRecipeHolder) this.container).awardUsedRecipes(this.player);
+		if (this.container instanceof IRecipeHolder) ((IRecipeHolder) this.container).awardUsedRecipes(this.player);
 		this.removeCount = 0;
 	}
 
@@ -62,15 +68,11 @@ public class FTGUCraftingResultSlot extends Slot {
 		RecipeManager rm = level.getRecipeManager();
 		Optional<IFTGUCraftingRecipe> modOptional = rm.getRecipeFor(FTGURecipeTypes.FTGU_CRAFTING, inv, level);
 		Optional<ICraftingRecipe> vanillaOptional = rm.getRecipeFor(IRecipeType.CRAFTING, inv, level);
-		if (modOptional.isPresent() || vanillaOptional.isPresent()) {
-			return DataUtils.getRemainingItems(inv);
-		} else {
+		if (modOptional.isPresent() || vanillaOptional.isPresent()) return DataUtils.getRemainingItems(inv);
+		else {
 			NonNullList<ItemStack> remaining = NonNullList.withSize(inv.getContainerSize(), ItemStack.EMPTY);
-
-			for (int i = 0; i < remaining.size(); ++i) {
+			for (int i = 0; i < remaining.size(); ++i)
 				remaining.set(i, inv.getItem(i));
-			}
-
 			return remaining;
 		}
 	}
@@ -87,16 +89,12 @@ public class FTGUCraftingResultSlot extends Slot {
 				this.craftSlots.removeItem(i, 1);
 				itemFromSlots = this.craftSlots.getItem(i);
 			}
-			if (!remainingItem.isEmpty())
-				if (itemFromSlots.isEmpty())
-					this.craftSlots.setItem(i, remainingItem);
-				else if (ItemStack.isSame(itemFromSlots, remainingItem) && ItemStack.tagMatches(itemFromSlots, remainingItem)) {
-					remainingItem.grow(itemFromSlots.getCount());
-					this.craftSlots.setItem(i, remainingItem);
-				} else if (!this.player.inventory.add(remainingItem))
-					this.player.drop(remainingItem, false);
+			if (!remainingItem.isEmpty()) if (itemFromSlots.isEmpty()) this.craftSlots.setItem(i, remainingItem);
+			else if (ItemStack.isSame(itemFromSlots, remainingItem) && ItemStack.tagMatches(itemFromSlots, remainingItem)) {
+				remainingItem.grow(itemFromSlots.getCount());
+				this.craftSlots.setItem(i, remainingItem);
+			} else if (!this.player.inventory.add(remainingItem)) this.player.drop(remainingItem, false);
 		}
-
 		return item;
 	}
 }

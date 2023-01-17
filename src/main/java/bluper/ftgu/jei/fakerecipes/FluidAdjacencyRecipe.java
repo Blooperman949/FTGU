@@ -5,6 +5,10 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+/**
+ * A simple class that holds the data for a FTGU-JEI Fluid Adjacency fake recipe, such as concrete powder and water. Not data-driven, purely informational.
+ * @author Bluperman949
+ */
 public class FluidAdjacencyRecipe {
 	public ItemStack blockIn;
 	public FluidStack fluidIn;

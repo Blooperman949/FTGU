@@ -12,6 +12,11 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.FluidStack;
 
+/**
+ * The JEI recipe category for Fluid Adjacency fake recipes.
+ * @see FluidAdjacencyRecipe
+ * @author Bluperman949
+ */
 public class FluidAdjacencyRecipeCategory implements IRecipeCategory<FluidAdjacencyRecipe> {
 	public static final ResourceLocation UID = new ResourceLocation(FTGU.MODID, "fluid_adjacency");
 	private IDrawable icon;

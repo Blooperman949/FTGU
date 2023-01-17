@@ -1,4 +1,4 @@
-package bluper.ftgu.data.assembly;
+package bluper.ftgu.data.assemblies;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -30,10 +30,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 
+/**
+ * Reload listener for assemblies.
+ * @author Bluperman949
+ */
 public class AssemblyManager extends JsonReloadListener {
 	private static final Logger LOGGER = LogManager.getLogger();
 	private static final AssemblyManager INSTANCE = new AssemblyManager(new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create());
-	private Map<Item, Map<ResourceLocation, IAssembly>> assemblies = ImmutableMap.of();
+	private Map<Item, Map<ResourceLocation, IAssembly>> assemblies = Maps.newHashMap();
 
 	public AssemblyManager(Gson gson) {
 		super(gson, "assemblies");
@@ -87,17 +91,22 @@ public class AssemblyManager extends JsonReloadListener {
 			return null;
 	}
 
+	/**
+	 * @param base the base {@link BlockState} of the desired assembly
+	 * @param addition the addition {@link Item} of the desired assembly
+	 * @return the first {@link IAssembly} found with the given base and addition, {@code null} if nonexistent
+	 */
 	@Nullable
-	public IAssembly getAssembly(BlockState state, Item item) {
+	public IAssembly getAssembly(BlockState base, Item addition) {
 		IAssembly ret = null;
-		Map<ResourceLocation, IAssembly> as = assemblies.get(item);
+		Map<ResourceLocation, IAssembly> as = assemblies.get(addition);
 		if (as != null)
 			for (IAssembly a : as.values()) {
-				if (!state.is(a.getBase().getBlock()))
+				if (!base.is(a.getBase().getBlock()))
 					continue;
 				boolean statesMatch = true;
-				for (Property<?> p : state.getProperties())
-					if (state.getValue(p) != a.getBase().getValue(p))
+				for (Property<?> p : base.getProperties())
+					if (base.getValue(p) != a.getBase().getValue(p))
 						statesMatch = false;
 				if (statesMatch) {
 					ret = a;

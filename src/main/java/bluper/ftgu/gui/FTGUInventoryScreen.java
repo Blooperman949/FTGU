@@ -6,6 +6,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DisplayEffectsScreen;
 import net.minecraft.client.gui.screen.inventory.CreativeScreen;
+import net.minecraft.client.gui.screen.inventory.InventoryScreen;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.entity.LivingEntity;
@@ -14,6 +15,10 @@ import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraft.util.text.TranslationTextComponent;
 
+/**
+ * FTGU's replacement for {@link InventoryScreen}. Will have more features in upcoming versions.
+ * @see FTGUPlayerContainer
+ */
 public class FTGUInventoryScreen extends DisplayEffectsScreen<FTGUPlayerContainer> {
 	private float xMouse;
 	private float yMouse;

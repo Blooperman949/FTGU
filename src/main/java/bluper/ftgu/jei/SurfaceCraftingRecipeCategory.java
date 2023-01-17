@@ -7,6 +7,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import bluper.ftgu.FTGU;
 import bluper.ftgu.data.BlockItemTag;
 import bluper.ftgu.data.recipes.IFTGUCraftingRecipe;
+import bluper.ftgu.gui.FTGUCraftingContainer;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.gui.drawable.IDrawable;
@@ -25,6 +26,13 @@ import net.minecraft.util.ResourceLocationException;
 import net.minecraftforge.common.util.Size2i;
 import net.minecraftforge.registries.ForgeRegistries;
 
+/**
+ * The JEI recipe category for FTGU Surface Crafting recipes.
+ * @see ShapedSurfaceRecipe
+ * @see ShapelessSurfaceRecipe
+ * @see FTGUCraftingContainer
+ * @author Bluperman949
+ */
 public class SurfaceCraftingRecipeCategory implements IRecipeCategory<IFTGUCraftingRecipe> {
 	public static final ResourceLocation UID = new ResourceLocation(FTGU.MODID, "crafting");
 	private IDrawable icon;

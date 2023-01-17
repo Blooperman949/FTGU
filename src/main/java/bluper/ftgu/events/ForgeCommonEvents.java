@@ -3,8 +3,8 @@ package bluper.ftgu.events;
 import java.util.Random;
 
 import bluper.ftgu.FTGU;
-import bluper.ftgu.data.assembly.AssemblyManager;
-import bluper.ftgu.data.assembly.IAssembly;
+import bluper.ftgu.data.assemblies.AssemblyManager;
+import bluper.ftgu.data.assemblies.IAssembly;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;

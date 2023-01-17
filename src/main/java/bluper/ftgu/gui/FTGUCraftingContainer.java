@@ -24,6 +24,14 @@ import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
+/**
+ * A container similar to {@link WorkbenchContainer} used for FTGU's
+ * crafting.<br>
+ * Interprets vanilla recipes and Surface Crafting recipes. Damages tools
+ * instead of consuming them.
+ * 
+ * @author Bluperman949
+ */
 public class FTGUCraftingContainer extends Container {
 	public static final ITextComponent TITLE = new TranslationTextComponent("container.crafting");
 	private final FTGUCraftingInventory craftSlots;
@@ -47,7 +55,7 @@ public class FTGUCraftingContainer extends Container {
 				this.addSlot(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
 		for (int i = 0; i < 9; ++i)
 			this.addSlot(new Slot(inventory, i, 8 + i * 18, 142));
-		this.addSlot(new Slot(new Inventory(1), 0, 93, 35) {
+		this.addSlot(new Slot(new Inventory(1), 0, 93, 35) { // hacky way to display the crafting surface
 			@Override
 			public boolean mayPickup(PlayerEntity p) {
 				return false;
@@ -61,9 +69,6 @@ public class FTGUCraftingContainer extends Container {
 		ItemStack surfaceItem = new ItemStack(surface.asItem());
 		surfaceItem.setHoverName((new TranslationTextComponent("gui.ftgu.craftingOn").append(surfaceItem.getHoverName())).setStyle(Style.EMPTY.withItalic(false)));
 		this.setItem(46, surfaceItem);
-		// Output: 0
-		// Crafting: 0-8
-		// Hotbar: 0-8, Inventory: 9-35
 	}
 
 	public Block getSurface() {
@@ -115,27 +120,18 @@ public class FTGUCraftingContainer extends Container {
 			itemBefore = itemInSlot.copy();
 			if (slotIndex == 0) {
 				this.access.execute((world, pos) -> itemInSlot.getItem().onCraftedBy(itemInSlot, world, player));
-				if (!this.moveItemStackTo(itemInSlot, 10, 46, true))
-					return ItemStack.EMPTY;
+				if (!this.moveItemStackTo(itemInSlot, 10, 46, true)) return ItemStack.EMPTY;
 				slot.onQuickCraft(itemInSlot, itemBefore);
 			} else if (slotIndex >= 10 && slotIndex < 46) {
-				if (!this.moveItemStackTo(itemInSlot, 1, 10, false))
-					if (slotIndex < 37) {
-						if (!this.moveItemStackTo(itemInSlot, 37, 46, false))
-							return ItemStack.EMPTY;
-					} else if (!this.moveItemStackTo(itemInSlot, 10, 37, false))
-						return ItemStack.EMPTY;
-			} else if (!this.moveItemStackTo(itemInSlot, 10, 46, false))
-				return ItemStack.EMPTY;
-			if (itemInSlot.isEmpty())
-				slot.set(ItemStack.EMPTY);
-			else
-				slot.setChanged();
-			if (itemInSlot.getCount() == itemBefore.getCount())
-				return ItemStack.EMPTY;
+				if (!this.moveItemStackTo(itemInSlot, 1, 10, false)) if (slotIndex < 37) {
+					if (!this.moveItemStackTo(itemInSlot, 37, 46, false)) return ItemStack.EMPTY;
+				} else if (!this.moveItemStackTo(itemInSlot, 10, 37, false)) return ItemStack.EMPTY;
+			} else if (!this.moveItemStackTo(itemInSlot, 10, 46, false)) return ItemStack.EMPTY;
+			if (itemInSlot.isEmpty()) slot.set(ItemStack.EMPTY);
+			else slot.setChanged();
+			if (itemInSlot.getCount() == itemBefore.getCount()) return ItemStack.EMPTY;
 			ItemStack itemToDrop = slot.onTake(player, itemInSlot);
-			if (slotIndex == 0)
-				player.drop(itemToDrop, false);
+			if (slotIndex == 0) player.drop(itemToDrop, false);
 		}
 		return itemBefore;
 	}

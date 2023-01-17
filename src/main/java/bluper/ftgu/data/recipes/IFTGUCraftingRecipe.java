@@ -7,6 +7,10 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraftforge.common.util.Size2i;
 
+/**
+ * extension of {@link IRecipe} for the {@link FTGUCraftingInventory}.
+ * @author Bluperman949
+ */
 public interface IFTGUCraftingRecipe extends IRecipe<FTGUCraftingInventory> {
 	@Override
 	default IRecipeType<?> getType() {

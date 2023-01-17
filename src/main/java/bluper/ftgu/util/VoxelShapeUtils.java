@@ -5,7 +5,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 
 public class VoxelShapeUtils {
-	// I stole this off of Forge forums, I have no idea how it works.
+	// I stole this off of Forge forums, I have no idea how it works. It was trial and error.
 	public static VoxelShape rotateShape(Direction from, Direction to, VoxelShape shape) {
 		VoxelShape[] buffer = new VoxelShape[] { shape, VoxelShapes.empty() };
 		int times = (to.ordinal() - from.get2DDataValue() + 4) % 4;

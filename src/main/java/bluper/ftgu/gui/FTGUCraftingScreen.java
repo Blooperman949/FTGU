@@ -6,9 +6,15 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import bluper.ftgu.FTGU;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.client.gui.screen.inventory.CraftingScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 
+/**
+ * A {@code ContainerScreen} similar to {@link CraftingScreen} used for FTGU's crafting.
+ * @see FTGUCraftingContainer
+ * @author Bluperman949
+ */
 public class FTGUCraftingScreen extends ContainerScreen<FTGUCraftingContainer> {
 	private ResourceLocation background;
 

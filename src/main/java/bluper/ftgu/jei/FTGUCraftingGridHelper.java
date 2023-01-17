@@ -2,9 +2,19 @@ package bluper.ftgu.jei;
 
 import java.util.List;
 
+import bluper.ftgu.data.recipes.ShapedSurfaceRecipe;
+import bluper.ftgu.data.recipes.ShapelessSurfaceRecipe;
+import bluper.ftgu.gui.FTGUCraftingContainer;
 import mezz.jei.api.gui.ingredient.IGuiIngredientGroup;
 import mezz.jei.gui.CraftingGridHelper;
 
+/**
+ * The JEI {@code CraftingGridHelper} for FTGU Surface Crafting recipes.
+ * @see ShapedSurfaceRecipe
+ * @see ShapelessSurfaceRecipe
+ * @see FTGUCraftingContainer
+ * @author Bluperman949
+ */
 public class FTGUCraftingGridHelper extends CraftingGridHelper {
 	public FTGUCraftingGridHelper() {
 		super(1);

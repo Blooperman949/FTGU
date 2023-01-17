@@ -11,6 +11,10 @@ import net.minecraft.client.renderer.RenderState;
 import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.util.Util;
 
+/**
+ * Some GL constants to avoid magic numbers. </p>
+ * Also contains carbon-copies of {@link RenderState}'s constants because access transformers were misbehaving.
+ */
 @SuppressWarnings({ "deprecation", "resource" })
 public class RenderConstants {
 	public static final int GL_POINTS = 0x0;

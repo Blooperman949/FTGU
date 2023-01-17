@@ -29,6 +29,10 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.util.ResourceLocation;
 
+/**
+ * FTGU's {@code JEIPlugin}.
+ * @author Bluperman949
+ */
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
 	@Override

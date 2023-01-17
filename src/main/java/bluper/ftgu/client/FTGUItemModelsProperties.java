@@ -5,6 +5,10 @@ import net.minecraft.item.ItemModelsProperties;
 import net.minecraft.util.ResourceLocation;
 
 public class FTGUItemModelsProperties {
+	/**
+	 * Calls {@link ItemModelsProperties}{@code .register()} to assign {@code BowItem}'s pulling properties.
+	 * @param item a {@link FTGUBowItem}
+	 */
 	public static void makeBow(FTGUBowItem item) {
 		ItemModelsProperties.register(item, new ResourceLocation("pull"), (itemStack, world, entity) -> {
 			if (entity == null)
